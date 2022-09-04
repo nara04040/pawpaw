@@ -1,24 +1,39 @@
 # pawpaw
 
-## Project setup
+## 브랜치 전략
+
 ```
-npm install
+feat/#이슈번호 : 기능개발
+
+refactor/#이슈번호 : 리팩토링
+
+build/#이슈번호 : 폴더구조나, 세팅할때
+
+style/#이슈번호 : 오타수정
 ```
 
-### Compiles and hot-reloads for development
+## 커밋메세지
+
 ```
-npm run serve
+‘feat : 내용내용내용 /#이슈넘버 ‘         :  기능개발일때
+
+‘refactor : 내용내용내용 /#이슈넘버‘      : 리팩토링일때
+
+‘build : 내용내용내용 /#이슈넘버‘         : 폴더구조 세팅
+
+‘style : 내용내용내용 /#이슈넘버‘        : 오타수정
+
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 커밋 규칙
 
-### Lints and fixes files
 ```
-npm run lint
-```
+1. 글자수는 50자 내외
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2. 처음은 동사원형으로
+
+3. 첫글자는 대문자로
+
+4. 특수문자는 빼기
+```
+# pawpaw
