@@ -1,14 +1,42 @@
 <template>
-  <div>
-    <ul class="qna-list">
-      <li>물어보세요</li>
-      <li>물어보세요</li>
-      <li>물어보세요</li>
-      <li>물어보세요</li>
-    </ul>
-    <button>입력</button>
-    <button>입력</button>
-  </div>
+  <section class="qna">
+    <div class="inner">
+      <div class="qna-visual">
+        <h2>QnA</h2>
+      </div>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </template>
 <script>
 export default {
@@ -25,23 +53,26 @@ export default {
   methods: {}
 }
 </script>
+
 <style scoped>
-.qna-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px;
+.qna .inner {
+  width: 1400px;
+  margin: 0 auto;
 }
-.qna-list > li {
-  width: 200px;
-  height: 100px;
-  margin-bottom: 20px;
-  background-color: skyblue;
+
+.qna-visual {
+  position: relative;
+  display: block;
+  padding: 30px;
+  background-color: rgb(172, 172, 172);
+  border-radius: 10px 10px 0 0;
+  margin: 25px 0;
+  opacity: 0.8;
 }
-button {
-  padding: 20px;
-  margin-right: 40px;
-  margin-left: 40px;
+
+.qna-visual h2 {
+  text-align: left;
+  text-shadow: 0px 1px 4px rgb(119, 119, 119);
+  color: #fff;
 }
 </style>
