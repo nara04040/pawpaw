@@ -1,18 +1,22 @@
 <template>
   <div>
     <header class="header">
-      <div class="inner">
+        <div class="header-top">
         <router-link to="/" class="logo"></router-link>
-      </div>
-      <nav>
-      <router-link to="/">Home</router-link> | <router-link to="/dogpage">DogPage</router-link> |
-      <router-link to="/catpage">Cat Page</router-link> |
-      <router-link to="/toypage">Toy</router-link> |
-      <router-link to="/qnapage">Q&A</router-link>
-    </nav>
-    <div class="login">
+        <p class="title">PawPaw</p>
+    <div class="header-right">
       <router-link to="/loginpage">Login</router-link>
     </div>
+        </div>
+        <div class="asd">
+      <ul class="nav">
+        <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/dogpage">DogPage</router-link></li>
+      <li><router-link to="/catpage">Cat Page</router-link></li>
+      <li><router-link to="/toypage">Toy</router-link></li>
+      <li><router-link to="/qnapage">Q&A</router-link></li>
+      </ul>
+      </div>
     </header>
   </div>
 </template>
@@ -23,11 +27,15 @@ export default {
 }
 </script>
 
-<style>
-.inner{
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
+<style scoped>
+
+.header-top{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 25px #D9D9D9;
+  max-height: 100px;
 }
 
 .logo{
@@ -35,47 +43,80 @@ export default {
   width: 100px;
   height: 100px;
   background: url('@/assets/images/logo.png') no-repeat center;
+  background-size: cover;
+  margin-left: 30px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.title{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  display: block;
+  width: 60%;
+  text-align: center;
+  font-size: 40px;
+  color: #FC8675;
+  font-weight: 700;
 }
-ul,
-li {
-  list-style: none;
+
+.header-right{
+  display: block;
+  width: 200px;
+  height: 100px;
+  margin-right: 30px;
 }
-.clearfix::after {
-  content: '';
-  position: relative;
+.header-right a {
+  line-height: 100px;
+  color: #FC8675;
+  font-size: 16px;
+  font-weight: 600;
+}
+.asd{
   display: block;
   width: 100%;
-  clear: both;
+  height: 70px;
+  line-height: 70px;
 }
-.inner {
-  width: 1400px;
-}
-
-nav {
+.nav {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  padding: 0 20px;
+.nav li{
+  position: relative;
+  width: 25%;
+  text-align: center;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-.login {
-  display: block;
+.nav li::after{
+  content: '';
   position: absolute;
-  top: 10px;
-  right: 100px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: #000;
+  opacity: 0.2;
+}
+.nav li:last-child::after{
+  display: none;
+}
+.nav a{
+  display: block;
+  font-weight: bold;
+  color: #FFB4AC;
+  padding: 0 20px;
+  line-height: 70px;
+  transition: color 0.5s;
+}
+.nav a:hover{
+  color: #FC8675;
+}
+.nav a.router-link-exact-active {
+  color: #FC8675;
+
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="footer">
         <div class="inner">
         <h3>만든이들</h3>
         <ul>
@@ -32,18 +32,23 @@ export default {
 </script>
 
 <style scoped>
-footer {
+.footer {
     background-color: skyblue;
     font-size: 20px;
 }
-footer .inner{
-    width: 1400px;
+.footer .inner{
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+}
+h3{
+    padding-top: 20px;
 }
 ul li{
     display: inline-block;
     font-size: 0;
     width: 25%;
+    text-align: center;
 }
 ul li:last-child{
     margin: 0;
