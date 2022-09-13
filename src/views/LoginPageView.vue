@@ -1,6 +1,14 @@
 <template>
   <div class="login-page">
-    <div class="kakao-login">카카오 로그인폼</div>
+    <div class="kakao-login">
+      <a id="custom-login-btn" @click="kakaoLogin()">
+        <img
+          src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+          width="300"
+          alt=""
+        />
+      </a>
+    </div>
     <div class="input-box">
       <input type="text" id="userid" placeholder="아이디" />
       <input type="text" id="password" placeholder="비밀번호" />
@@ -14,7 +22,8 @@ export default {
   components: {},
   data() {
     return {
-      example: ''
+      example: '',
+      userName: 'nara'
     }
   },
   setup() {},
@@ -23,7 +32,32 @@ export default {
   unmounted() {},
   methods: {
     correctLogin() {
-      alert('로그인되었습니다!')
+      alert(`환영합니다 ${this.userName}님`)
+      location.href = 'http://localhost:8080/'
+    },
+    kakaoLogin() {
+      console.log(window.Kakao)
+      window.Kakao.Auth.login({
+        scope: 'profile_nickname, account_email',
+        success: this.getKakaoAccount
+      })
+    },
+    getKakaoAccount() {
+      window.Kakao.API.request({
+        url: '/v2/user/me',
+        success: (res) => {
+          const kakaoAccount = res.kakaoAccount
+          const nickname = kakaoAccount.nickname
+          const email = kakaoAccount.email
+          console.log('nickname', nickname)
+          console.log('email', email)
+
+          alert('로그인 성공!')
+        },
+        fail: (error) => {
+          console.log(error)
+        }
+      })
     }
   }
 }
@@ -35,7 +69,7 @@ export default {
 .kakao-login {
   position: relative;
   padding: 30px 0;
-  background-color: #f9e000;
+  /* background-color: #f9e000; */
   margin-bottom: 24px;
 }
 .kakao-login::after {
