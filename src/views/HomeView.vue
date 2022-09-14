@@ -1,6 +1,5 @@
 <template>
   <div class="warp">
-    <HeaderPart></HeaderPart>
     <VisualPart></VisualPart>
     <SliderPart></SliderPart>
   </div>
@@ -8,14 +7,12 @@
 
 <script>
 // @ is an alias to /src
-import HeaderPart from '@/components/HeaderPart.vue'
 import VisualPart from '@/components/VisualPart.vue'
 import SliderPart from '@/components/SliderPart.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HeaderPart,
     VisualPart,
     SliderPart
   }
